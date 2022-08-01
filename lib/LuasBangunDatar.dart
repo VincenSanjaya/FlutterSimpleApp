@@ -70,7 +70,7 @@ class _LuasBangunDatarState extends State<LuasBangunDatar> {
             Center(
               child: Container(
                 height: 50,
-                width: 100,
+                width: 200,
                 child: ElevatedButton(
                   onPressed: () {
                     setState(() {
