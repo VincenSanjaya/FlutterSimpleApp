@@ -49,6 +49,36 @@ class _ListViewWAState extends State<ListViewWA> {
       urlImage:
           "https://i.ibb.co/wWqs23Z/samsung-memory-k5e-Fm1f2es-Q-unsplash.jpg",
     ),
+    const User(
+      name: "Bumi",
+      text: "Janji Celtics kalah bang?",
+      urlImage:
+      "https://i.ibb.co/wWqs23Z/samsung-memory-k5e-Fm1f2es-Q-unsplash.jpg",
+    ),
+    const User(
+      name: "Arfa",
+      text: "Mie 2 banh",
+      urlImage:
+      "https://i.ibb.co/wWqs23Z/samsung-memory-k5e-Fm1f2es-Q-unsplash.jpg",
+    ),
+    const User(
+      name: "Jolang",
+      text: "WOI WOI WOIII, MU MENANGGG",
+      urlImage:
+      "https://i.ibb.co/wWqs23Z/samsung-memory-k5e-Fm1f2es-Q-unsplash.jpg",
+    ),
+    const User(
+      name: "Darrel",
+      text: "Info Unity",
+      urlImage:
+      "https://i.ibb.co/wWqs23Z/samsung-memory-k5e-Fm1f2es-Q-unsplash.jpg",
+    ),
+    const User(
+      name: "Ario",
+      text: "Saya ngga mau yang 5000, maunya yang 4000",
+      urlImage:
+      "https://i.ibb.co/wWqs23Z/samsung-memory-k5e-Fm1f2es-Q-unsplash.jpg",
+    ),
   ];
 
   @override

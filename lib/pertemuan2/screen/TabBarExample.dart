@@ -1,3 +1,4 @@
+import 'package:belajar_flutter/ListTeamPL.dart';
 import 'package:belajar_flutter/ListViewWA.dart';
 import 'package:flutter/material.dart';
 
@@ -74,11 +75,7 @@ class _TabbarExampleState extends State<TabbarExample>
           controller: _controller,
           children: [
            ListViewWA(),
-            Center(
-                child: Text(
-                  "No Status",
-                  style: TextStyle(fontSize: 40),
-                )),
+            ListTeamPL(),
             Center(
                 child: Text(
                   "No Calls Yet",
