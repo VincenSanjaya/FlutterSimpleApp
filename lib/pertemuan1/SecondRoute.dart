@@ -1,4 +1,4 @@
-import 'package:belajar_flutter/FormRegristation.dart';
+import 'package:belajar_flutter/pertemuan1/FormRegristation.dart';
 import 'package:flutter/material.dart';
 
 

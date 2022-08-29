@@ -1,0 +1,88 @@
+import 'package:belajar_flutter/pertemuan2/screen/TeamPLModel.dart';
+import 'package:belajar_flutter/pertemuan2/screen/components/detailpage/DetailPage.dart';
+import 'package:flutter/material.dart';
+import 'package:http/http.dart' as http;
+import 'dart:convert';
+
+class ListTeamPL extends StatefulWidget {
+  const ListTeamPL({Key? key}) : super(key: key);
+
+  @override
+  State<ListTeamPL> createState() => _ListTeamPLState();
+}
+
+class _ListTeamPLState extends State<ListTeamPL> {
+
+  TeamPLModel? teamPLModel;
+  bool isloaded = true;
+
+  @override
+  void initState() {
+    super.initState();
+    getAllListPL();
+  }
+
+  void getAllListPL() async {
+    setState(() {
+      isloaded = false;
+    });
+
+    final res = await http.get(
+      Uri.parse(
+          "https://www.thesportsdb.com/api/v1/json/2/search_all_teams.php?l=English%20Premier%20League"),
+    );
+    print("Status code " + res.statusCode.toString());
+
+    teamPLModel = TeamPLModel.fromJson((json.decode(res.body.toString())));
+    print("team 0 : " + teamPLModel!.teams![0].strTeam.toString());
+
+    setState(() {
+      isloaded = true;
+    });
+  }
+
+  @override
+  Widget build(BuildContext context) {
+
+    return Scaffold(
+      body: Center(
+        child: Container(
+          child: isloaded
+              ? ListView.builder(
+                  itemCount: teamPLModel!.teams!.length,
+                  itemBuilder: (BuildContext context, int index) {
+                    return InkWell(
+                      onTap: () {
+                        Navigator.push(context, MaterialPageRoute(builder: (context) => DetailPage(teams: teamPLModel!.teams![index])),);
+                      },
+                      child: Card(
+                        child: Container(
+                          margin: EdgeInsets.all(20),
+                          child: Row(
+                            children: [
+                              Container(
+                                margin: EdgeInsets.only(right: 20),
+                                width: 30,
+                                height: 30,
+                                child: Image.network(teamPLModel!.teams![index].strTeamBadge.toString()),
+                                ),
+                              Column(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  Text(teamPLModel!.teams![index].strTeam.toString()),
+                                  Text(teamPLModel!.teams![index].strStadium.toString())
+                                ],
+                              )
+                            ],
+                          ),
+                        ),
+                      ),
+                    );
+                  })
+              : CircularProgressIndicator(),
+        ),
+      ),
+    );
+  }
+}
+

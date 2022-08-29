@@ -1,5 +1,5 @@
-import 'package:belajar_flutter/ListTeamPL.dart';
-import 'package:belajar_flutter/ListViewWA.dart';
+import 'package:belajar_flutter/pertemuan2/screen/ListTeamPL.dart';
+import 'package:belajar_flutter/pertemuan2/screen/ListViewWA.dart';
 import 'package:flutter/material.dart';
 
 class TabbarExample extends StatefulWidget {

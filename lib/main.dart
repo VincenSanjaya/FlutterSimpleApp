@@ -1,7 +1,8 @@
-import 'package:belajar_flutter/FormRegristation.dart';
-import 'package:belajar_flutter/ListViewWA.dart';
-import 'package:belajar_flutter/LuasBangunDatar.dart';
-import 'package:belajar_flutter/TabBarExample.dart';
+import 'package:belajar_flutter/pertemuan1/FormRegristation.dart';
+import 'package:belajar_flutter/pertemuan2/screen/ListTeamPL.dart';
+import 'package:belajar_flutter/pertemuan2/screen/ListViewWA.dart';
+import 'package:belajar_flutter/pertemuan1/LuasBangunDatar.dart';
+import 'package:belajar_flutter/pertemuan2/screen/TabBarExample.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -15,7 +16,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      title: 'Flutter Demo',
+      title: 'WhatsApp',
       theme: ThemeData(
       ),
       home: const TabbarExample(),
