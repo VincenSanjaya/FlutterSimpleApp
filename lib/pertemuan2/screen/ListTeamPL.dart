@@ -55,28 +55,52 @@ class _ListTeamPLState extends State<ListTeamPL> {
                       onTap: () {
                         Navigator.push(context, MaterialPageRoute(builder: (context) => DetailPage(teams: teamPLModel!.teams![index])),);
                       },
-                      child: Card(
-                        child: Container(
-                          margin: EdgeInsets.all(20),
-                          child: Row(
-                            children: [
-                              Container(
-                                margin: EdgeInsets.only(right: 20),
-                                width: 30,
-                                height: 30,
-                                child: Image.network(teamPLModel!.teams![index].strTeamBadge.toString()),
+
+                        child: Card(
+                          color: Color.fromRGBO(63, 16, 82, 1),
+                          child: Container(
+
+                            margin: EdgeInsets.only(left: 7, top: 5, bottom: 5, right: 10),
+                            child: Row(
+                              children: [
+                                Container(
+                                  margin: EdgeInsets.only(right: 20),
+                                  width: 30,
+                                  height: 40,
+                              child: FadeInImage.assetNetwork(
+                                  placeholder: 'Assets/premier_logo_small.png', height: 50, width: 40,
+                                  image:teamPLModel!.teams![index].strTeamLogo.toString(),),
+                              ),
+                                Column(
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  children: [
+
+                                    Text(teamPLModel!.teams![index].strTeam.toString(), style: TextStyle(
+                                      color: Colors.white,
+                                      fontWeight: FontWeight.bold,
+                                      fontSize: 11
+                                    ),),
+                                    SizedBox(height: 5,),
+                                    Text(teamPLModel!.teams![index].strCountry.toString() + " - " + teamPLModel!.teams![index].intFormedYear.toString(),style: TextStyle(
+                                        color: Colors.white,
+                                        fontWeight: FontWeight.bold,
+                                        fontSize: 10))
+                                  ],
                                 ),
-                              Column(
-                                crossAxisAlignment: CrossAxisAlignment.start,
-                                children: [
-                                  Text(teamPLModel!.teams![index].strTeam.toString()),
-                                  Text(teamPLModel!.teams![index].strStadium.toString())
-                                ],
-                              )
-                            ],
+                                Spacer(),
+                                IconButton(
+                                  icon: Icon(
+                                    Icons.keyboard_double_arrow_right_rounded,
+                                    color: Colors.white,
+                                  ),
+                                  onPressed: () {
+                                    Navigator.push(context, MaterialPageRoute(builder: (context) => DetailPage(teams: teamPLModel!.teams![index])),);
+                                  },
+                                ),
+                              ],
+                            ),
                           ),
                         ),
-                      ),
                     );
                   })
               : CircularProgressIndicator(),
