@@ -1,5 +1,6 @@
 import 'package:belajar_flutter/pertemuan2/screen/ListTeamPL.dart';
 import 'package:belajar_flutter/pertemuan2/screen/ListViewWA.dart';
+import 'package:belajar_flutter/pertemuan2/screen/components/favoritepage/favPage.dart';
 import 'package:flutter/material.dart';
 
 class TabbarExample extends StatefulWidget {
@@ -76,11 +77,7 @@ class _TabbarExampleState extends State<TabbarExample>
           children: [
            ListViewWA(),
             ListTeamPL(),
-            Center(
-                child: Text(
-                  "No Calls Yet",
-                  style: TextStyle(fontSize: 40),
-                )),
+            favPage()
           ],
         ),
       ),

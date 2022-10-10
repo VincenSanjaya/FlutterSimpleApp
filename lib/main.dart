@@ -3,6 +3,7 @@ import 'package:belajar_flutter/pertemuan2/screen/ListTeamPL.dart';
 import 'package:belajar_flutter/pertemuan2/screen/ListViewWA.dart';
 import 'package:belajar_flutter/pertemuan1/LuasBangunDatar.dart';
 import 'package:belajar_flutter/pertemuan2/screen/TabBarExample.dart';
+import 'package:belajar_flutter/pertemuan4/screen/components/Karyawan.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_native_splash/flutter_native_splash.dart';
 
@@ -20,7 +21,7 @@ class MyApp extends StatelessWidget {
       title: 'WhatsApp',
       theme: ThemeData(
       ),
-      home: const ListTeamPL(),
+      home: const TabbarExample(),
     );
   }
 }
